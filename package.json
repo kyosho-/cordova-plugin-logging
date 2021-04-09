@@ -1,0 +1,22 @@
+{
+  "name": "cordova-plugin-logging",
+  "version": "0.0.0",
+  "description": "",
+  "cordova": {
+    "id": "cordova-plugin-logging",
+    "platforms": []
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyosho-/cordova-plugin-logging.git"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Akira Kurosawa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kyosho-/cordova-plugin-logging/issues"
+  },
+  "homepage": "https://github.com/kyosho-/cordova-plugin-logging#readme"
+}
