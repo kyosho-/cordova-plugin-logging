@@ -1,7 +1,33 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-logging" version="0.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="cordova-plugin-logging" version="0.0.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
     <name>cordova-plugin-logging</name>
-    <js-module name="cordova-plugin-logging" src="www/cordova-plugin-logging.js">
-        <clobbers target="cordova.plugins.cordova-plugin-logging" />
+    <description></description>
+    <license>MIT</license>
+    <keywords>cordova,plugin,android</keywords>
+
+    <js-module name="LoggingLocal" src="www/lib/logging-local.js">
+        <clobbers target="cordova.plugins.LoggingLocal" />
     </js-module>
+
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="LoggingLocal">
+                <param name="android-package" value="net.kyosho.logging.LoggingLocal" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+
+        <!-- Support Library Version -->
+        <preference name="ANDROID_SUPPORT_LIBRARY_VERSION" default="26+"/>
+
+        <!-- Extras Gradle Settings -->
+        <framework src="src/android/build-extras.gradle" custom="true" type="gradleReference"/>
+
+        <source-file src="src/android/main/java/net/kyosho/logging/CallbackType.java" target-dir="src/net/kyosho/logging" />
+        <source-file src="src/android/main/java/net/kyosho/logging/LoggingLocal.java" target-dir="src/net/kyosho/logging" />
+        <source-file src="src/android/main/java/net/kyosho/logging/PluginResultFactory.java" target-dir="src/net/kyosho/logging" />
+    </platform>
 </plugin>

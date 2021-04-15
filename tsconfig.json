@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "module": "CommonJS",
+        "sourceMap": false,
+        "outDir": "www",
+        "declaration": true,
+        "lib": [
+            "ES6",
+            "dom"
+        ]
+    },
+    "include": [
+        "src/ts/**/*"
+    ]
+}
