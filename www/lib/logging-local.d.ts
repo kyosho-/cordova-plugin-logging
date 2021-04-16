@@ -1,13 +1,15 @@
-import { CallbackResult } from "./callback-result";
-export declare function log(successCallback: (success: CallbackResult<void>) => void, errorCallback: (error: CallbackResult<any>) => void, logLevel: 'debug' | 'info' | 'warn' | 'error', message: string): void;
-export declare function debug(successCallback: (success: CallbackResult<void>) => void, errorCallback: (error: CallbackResult<any>) => void, message: string): void;
-export declare function info(successCallback: (success: CallbackResult<void>) => void, errorCallback: (error: CallbackResult<any>) => void, message: string): void;
-export declare function warn(successCallback: (success: CallbackResult<void>) => void, errorCallback: (error: CallbackResult<any>) => void, message: string): void;
-export declare function error(successCallback: (success: CallbackResult<void>) => void, errorCallback: (error: CallbackResult<any>) => void, message: string): void;
+import { LoggingSettings } from "./logging-settings";
+export declare function configure(successCallback: () => void, errorCallback: (error: any) => void, settings: LoggingSettings): void;
+export declare function log(successCallback: () => void, errorCallback: (error: any) => void, logLevel: 'debug' | 'info' | 'warn' | 'error', message: string): void;
+export declare function debug(successCallback: () => void, errorCallback: (error: any) => void, message: string): void;
+export declare function info(successCallback: () => void, errorCallback: (error: any) => void, message: string): void;
+export declare function warn(successCallback: () => void, errorCallback: (error: any) => void, message: string): void;
+export declare function error(successCallback: () => void, errorCallback: (error: any) => void, message: string): void;
 export interface LoggingLocal {
-    log(successCallback: (success: CallbackResult<void>) => void, errorCallback: (error: CallbackResult<any>) => void, logLevel: 'debug' | 'info' | 'warn' | 'error', message: string): void;
-    debug(successCallback: (success: CallbackResult<void>) => void, errorCallback: (error: CallbackResult<any>) => void, message: string): void;
-    info(successCallback: (success: CallbackResult<void>) => void, errorCallback: (error: CallbackResult<any>) => void, message: string): void;
-    warn(successCallback: (success: CallbackResult<void>) => void, errorCallback: (error: CallbackResult<any>) => void, message: string): void;
-    error(successCallback: (success: CallbackResult<void>) => void, errorCallback: (error: CallbackResult<any>) => void, message: string): void;
+    configure(successCallback: () => void, errorCallback: (error: any) => void, settings: LoggingSettings): void;
+    log(successCallback: () => void, errorCallback: (error: any) => void, logLevel: 'debug' | 'info' | 'warn' | 'error', message: string): void;
+    debug(successCallback: () => void, errorCallback: (error: any) => void, message: string): void;
+    info(successCallback: () => void, errorCallback: (error: any) => void, message: string): void;
+    warn(successCallback: () => void, errorCallback: (error: any) => void, message: string): void;
+    error(successCallback: () => void, errorCallback: (error: any) => void, message: string): void;
 }

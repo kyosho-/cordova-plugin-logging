@@ -1,7 +1,7 @@
 {
   "name": "cordova-plugin-logging",
-  "version": "0.0.0",
-  "description": "",
+  "version": "1.0.0",
+  "description": "Logging plugin based logback",
   "main": "www/public-api.js",
   "types": "www/public-api.d.ts",
   "cordova": {
@@ -10,11 +10,21 @@
       "android"
     ]
   },
+  "engines": {
+    "cordovaDependencies": {
+      "1.0.0": {
+        "cordova-android": ">=9.0.0"
+      }
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kyosho-/cordova-plugin-logging.git"
   },
   "keywords": [
+    "cordova",
+    "logging",
+    "logback",
     "ecosystem:cordova",
     "cordova-android"
   ],

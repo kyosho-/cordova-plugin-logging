@@ -4,9 +4,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <name>cordova-plugin-logging</name>
-    <description></description>
+    <description>Logging plugin based logback</description>
     <license>MIT</license>
-    <keywords>cordova,plugin,android</keywords>
+    <keywords>cordova,plugin,logging,android</keywords>
 
     <js-module name="LoggingLocal" src="www/lib/logging-local.js">
         <clobbers target="cordova.plugins.LoggingLocal" />
@@ -26,8 +26,12 @@
         <!-- Extras Gradle Settings -->
         <framework src="src/android/build-extras.gradle" custom="true" type="gradleReference"/>
 
-        <source-file src="src/android/main/java/net/kyosho/logging/CallbackType.java" target-dir="src/net/kyosho/logging" />
+        <!-- Libraries -->
+        <framework src="com.fasterxml.jackson.core:jackson-databind:2.11.0"/>
+        <framework src="com.fasterxml.jackson.datatype:jackson-datatype-json-org:2.11.0"/>
+
+        <!-- source -->
         <source-file src="src/android/main/java/net/kyosho/logging/LoggingLocal.java" target-dir="src/net/kyosho/logging" />
-        <source-file src="src/android/main/java/net/kyosho/logging/PluginResultFactory.java" target-dir="src/net/kyosho/logging" />
+        <source-file src="src/android/main/java/net/kyosho/logging/LoggingSettings.java" target-dir="src/net/kyosho/logging" />
     </platform>
 </plugin>

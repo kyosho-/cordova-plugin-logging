@@ -13,7 +13,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Data
  */
-__exportStar(require("./lib/callback-result"), exports);
+__exportStar(require("./lib/logging-settings"), exports);
 /**
  * API
  */
