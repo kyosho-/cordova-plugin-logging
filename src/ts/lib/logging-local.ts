@@ -3,7 +3,7 @@
  */
 declare const cordova: any;
 
-import { CallbackResult } from "./callback-result";
+import { LoggingSettings } from "./logging-settings";
 
 /**
  * @hidden
@@ -11,9 +11,19 @@ import { CallbackResult } from "./callback-result";
  */
 const CLASS_NAME = 'LoggingLocal';
 
+export function configure(
+    successCallback: () => void,
+    errorCallback: (error: any) => void,
+    settings: LoggingSettings): void {
+    const methodName = 'configure';
+    cordova.exec(successCallback, errorCallback, CLASS_NAME, methodName, [
+        settings
+    ]);
+}
+
 export function log(
-    successCallback: (success: CallbackResult<void>) => void,
-    errorCallback: (error: CallbackResult<any>) => void,
+    successCallback: () => void,
+    errorCallback: (error: any) => void,
     logLevel: 'debug' | 'info' | 'warn' | 'error',
     message: string): void {
     const methodName = 'log';
@@ -24,68 +34,61 @@ export function log(
 }
 
 export function debug(
-    successCallback: (success: CallbackResult<void>) => void,
-    errorCallback: (error: CallbackResult<any>) => void,
+    successCallback: () => void,
+    errorCallback: (error: any) => void,
     message: string): void {
     const logLevel = 'debug';
-    log(successCallback,
-        errorCallback,
-        logLevel,
-        message);
+    log(successCallback, errorCallback, logLevel, message);
 }
 
 export function info(
-    successCallback: (success: CallbackResult<void>) => void,
-    errorCallback: (error: CallbackResult<any>) => void,
+    successCallback: () => void,
+    errorCallback: (error: any) => void,
     message: string): void {
     const logLevel = 'info';
-    log(successCallback,
-        errorCallback,
-        logLevel,
-        message);
+    log(successCallback, errorCallback, logLevel, message);
 }
 
 export function warn(
-    successCallback: (success: CallbackResult<void>) => void,
-    errorCallback: (error: CallbackResult<any>) => void,
+    successCallback: () => void,
+    errorCallback: (error: any) => void,
     message: string): void {
     const logLevel = 'warn';
-    log(successCallback,
-        errorCallback,
-        logLevel,
-        message);
+    log(successCallback, errorCallback, logLevel, message);
 }
 
 export function error(
-    successCallback: (success: CallbackResult<void>) => void,
-    errorCallback: (error: CallbackResult<any>) => void,
+    successCallback: () => void,
+    errorCallback: (error: any) => void,
     message: string): void {
     const logLevel = 'error';
-    log(successCallback,
-        errorCallback,
-        logLevel,
-        message);
+    log(successCallback, errorCallback, logLevel, message);
 }
 
 export interface LoggingLocal {
-    log(successCallback: (success: CallbackResult<void>) => void,
-        errorCallback: (error: CallbackResult<any>) => void,
+    configure(
+        successCallback: () => void,
+        errorCallback: (error: any) => void,
+        settings: LoggingSettings): void;
+
+    log(successCallback: () => void,
+        errorCallback: (error: any) => void,
         logLevel: 'debug' | 'info' | 'warn' | 'error',
         message: string): void;
 
-    debug(successCallback: (success: CallbackResult<void>) => void,
-        errorCallback: (error: CallbackResult<any>) => void,
+    debug(successCallback: () => void,
+        errorCallback: (error: any) => void,
         message: string): void;
 
-    info(successCallback: (success: CallbackResult<void>) => void,
-        errorCallback: (error: CallbackResult<any>) => void,
+    info(successCallback: () => void,
+        errorCallback: (error: any) => void,
         message: string): void;
 
-    warn(successCallback: (success: CallbackResult<void>) => void,
-        errorCallback: (error: CallbackResult<any>) => void,
+    warn(successCallback: () => void,
+        errorCallback: (error: any) => void,
         message: string): void;
 
-    error(successCallback: (success: CallbackResult<void>) => void,
-        errorCallback: (error: CallbackResult<any>) => void,
+    error(successCallback: () => void,
+        errorCallback: (error: any) => void,
         message: string): void;
 }

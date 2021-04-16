@@ -25,9 +25,12 @@
 
         <!-- Extras Gradle Settings -->
         <framework src="src/android/build-extras.gradle" custom="true" type="gradleReference"/>
+        <framework src="com.fasterxml.jackson.core:jackson-databind:2.11.0"/>
+        <!-- TIPS: https://stackoverflow.com/questions/20534862/how-to-efficiently-map-a-org-json-jsonobject-to-a-pojo-->
+        <!-- TIPS: https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-json-org-->
+        <framework src="com.fasterxml.jackson.datatype:jackson-datatype-json-org:2.11.0"/>
 
-        <source-file src="src/android/main/java/net/kyosho/logging/CallbackType.java" target-dir="src/net/kyosho/logging" />
         <source-file src="src/android/main/java/net/kyosho/logging/LoggingLocal.java" target-dir="src/net/kyosho/logging" />
-        <source-file src="src/android/main/java/net/kyosho/logging/PluginResultFactory.java" target-dir="src/net/kyosho/logging" />
+        <source-file src="src/android/main/java/net/kyosho/logging/LoggingSettings.java" target-dir="src/net/kyosho/logging" />
     </platform>
 </plugin>

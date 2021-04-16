@@ -1,11 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.error = exports.warn = exports.info = exports.debug = exports.log = void 0;
+exports.error = exports.warn = exports.info = exports.debug = exports.log = exports.configure = void 0;
 /**
  * @hidden
  * Related Java Class Name.
  */
 var CLASS_NAME = 'LoggingLocal';
+function configure(successCallback, errorCallback, settings) {
+    var methodName = 'configure';
+    cordova.exec(successCallback, errorCallback, CLASS_NAME, methodName, [
+        settings
+    ]);
+}
+exports.configure = configure;
 function log(successCallback, errorCallback, logLevel, message) {
     var methodName = 'log';
     cordova.exec(successCallback, errorCallback, CLASS_NAME, methodName, [

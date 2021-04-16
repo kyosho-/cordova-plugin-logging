@@ -1,7 +1,7 @@
 /**
  * Data
  */
-export * from './lib/callback-result';
+export * from './lib/logging-settings';
 
 /**
  * API
