@@ -25,6 +25,10 @@
 
         <!-- Extras Gradle Settings -->
         <framework src="src/android/build-extras.gradle" custom="true" type="gradleReference"/>
+        <framework src="com.fasterxml.jackson.core:jackson-databind:2.11.0"/>
+        <!-- TIPS: https://stackoverflow.com/questions/20534862/how-to-efficiently-map-a-org-json-jsonobject-to-a-pojo-->
+        <!-- TIPS: https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-json-org-->
+        <framework src="com.fasterxml.jackson.datatype:jackson-datatype-json-org:2.11.0"/>
 
         <!-- Libraries -->
         <framework src="com.fasterxml.jackson.core:jackson-databind:2.11.0"/>
