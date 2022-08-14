@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-logging",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Logging plugin based logback",
   "main": "www/public-api.js",
   "types": "www/public-api.d.ts",

@@ -255,7 +255,7 @@ public class LoggingLocal extends CordovaPlugin {
         final ch.qos.logback.classic.Logger root =
           (ch.qos.logback.classic.Logger) LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
         {
-          root.setLevel(Level.ALL);
+          root.setLevel(Level.toLevel(settings.getLevel()));
           root.addAppender(rollingFileAppender);
           root.addAppender(logcatAppender);
         }

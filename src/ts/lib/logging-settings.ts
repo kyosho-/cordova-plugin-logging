@@ -1,7 +1,8 @@
 export class LoggingSettings {
-    logFilePath: string;
-    layoutPattern: string;
-    maxFileSize: string;
-    rollingFileNamePostfix: string;
-    maxHistory: number;
+  level?: 'ALL' | 'TRACE' | 'DEBUG' | 'INFO' | 'WARN' | 'ERROR' | 'OFF';
+  logFilePath: string;
+  layoutPattern: string;
+  maxFileSize: string;
+  rollingFileNamePostfix: string;
+  maxHistory: number;
 }

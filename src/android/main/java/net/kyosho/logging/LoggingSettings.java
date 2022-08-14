@@ -14,6 +14,13 @@ import lombok.Setter;
  *
  */
 public class LoggingSettings {
+  /**
+   *
+   */
+  @Getter
+  @Setter
+  @JsonProperty("level")
+  private String level = "INFO";
 
   /**
    *
